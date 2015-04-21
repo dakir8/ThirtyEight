@@ -23,13 +23,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CO9-9e-OVD">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="900"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d6M-oR-5Ho">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6M-oR-5Ho">
                                                 <rect key="frame" x="8" y="216" width="584" height="394"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="394" id="VHl-0e-A7v"/>
                                                 </constraints>
-                                                <mutableString key="text">Hello，欢迎你关注我，我叫小度，是一个热爱生活、向往自由、喜欢阅读，喜欢思考，喜欢摄影的人，我们团队的微信公众账号叫“38摄氏度工作室”，我们团队的服务范围：   
+                                                <string key="text">Hello，欢迎你关注我，我叫小度，是一个热爱生活、向往自由、喜欢阅读，喜欢思考，喜欢摄影的人，我们团队的微信公众账号叫“38摄氏度工作室”，我们团队的服务范围：   
  1、企业宣传片  婚礼跟拍  广告产品拍摄 微电影  专题片  Mv制作  各类纪录片  影视广告
 2、户外广告（易拉宝、拉网展架、X展架、LED、户外指示牌、灯箱、T牌等）；印刷品（单张、海报、册子、手提袋等） 
 
@@ -42,7 +42,7 @@ QQ：896969882
 
 电话：15916969882
 
-微信二维码：</mutableString>
+微信二维码：</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -152,7 +152,7 @@ QQ：896969882
             </objects>
             <point key="canvasLocation" x="662" y="2114"/>
         </scene>
-        <!--Exibition Table View Controller-->
+        <!--作品展示-->
         <scene sceneID="fN8-Od-Gbq">
             <objects>
                 <tableViewController id="xLQ-JN-yX8" customClass="ExibitionTableViewController" customModule="ThirtyEight" customModuleProvider="target" sceneMemberID="viewController">
@@ -173,7 +173,7 @@ QQ：896969882
                             <outlet property="delegate" destination="xLQ-JN-yX8" id="xdD-5K-vQD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="BO2-ps-T7G"/>
+                    <navigationItem key="navigationItem" title="作品展示" id="BO2-ps-T7G"/>
                     <connections>
                         <segue destination="aet-z9-Lem" kind="show" identifier="showWeb" id="8JJ-iG-Paz"/>
                     </connections>

@@ -7,19 +7,32 @@
 //
 
 import UIKit
+import Alamofire
 
 class ExibitionTableViewController: UITableViewController {
     
-    class Product {
+    class Product: Printable {
         let name: String?
         let videoUrl: String?
         let imageUrl: String?
+        
+        var description: String {
+            return "name:\(self.name), videoUrl:\(self.videoUrl), imageUrl: \(self.imageUrl)"
+        }
         
         init(name: String, videoUrl: String, imageUrl: String) {
             self.name = name
             self.videoUrl = videoUrl
             self.imageUrl = imageUrl
         }
+        
+        init(json: JSON) {
+            self.name = json["video_name"].string
+            self.videoUrl = json["video_url"].string
+            self.imageUrl = json["thumbnail_url"].string
+        }
+        
+        
     }
     
     let reusableIdentifier = "PartnerCell"
@@ -31,10 +44,28 @@ class ExibitionTableViewController: UITableViewController {
 
         self.tableView.registerNib(UINib(nibName: "PartnerCell", bundle: nil), forCellReuseIdentifier: reusableIdentifier)
         
-        products.append(Product(name: "东莞光明眼科医院宣传片", videoUrl: "http://v.qq.com/page/d/6/p/d0145wj3l6p.html", imageUrl: "guangming.jpg"));
-        products.append(Product(name: "金爸爸网络科技有限公司 1", videoUrl: "http://v.qq.com/page/v/e/1/v0146yozbe1.html", imageUrl: "jinbaba1.jpg"));
-        products.append(Product(name: "金爸爸网络科技有限公司 2", videoUrl: "http://v.qq.com/page/r/o/l/r01469jisol.html", imageUrl: "jinbaba2.jpg"));
-        products.append(Product(name: "悦港汇商场宣传视频", videoUrl: "http://v.qq.com/page/x/g/m/x0146te63gm.html", imageUrl: "yuegang.jpg"));
+        let url = IConstant.baseUrl + "getVideoCollection.php"
+        
+        Alamofire.request(.GET, url, parameters: nil)
+            .responseJSON { (req, res, json, error) in
+                if(error != nil) {
+                    NSLog("Error: \(error)")
+                    println(req)
+                    println(res)
+                }
+                else {
+                    NSLog("Success: \(url)")
+                    var json = JSON(json!)
+                    for video in json["video_collections"][0]["videos"].arrayValue {
+                        self.products.append(Product(json: video))
+                    }
+                    
+                    println(self.products)
+                    
+                    self.tableView.reloadData()
+                }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,7 +93,10 @@ class ExibitionTableViewController: UITableViewController {
         // Configure the cell...
         
         cell.title?.text = products[indexPath.row].name
-        cell.thumbnail.image = UIImage(named: products[indexPath.row].imageUrl!)
+        if let imageUrl = products[indexPath.row].imageUrl {
+            cell.thumbnail.image = UIImage(named: imageUrl)
+        }
+        
         
         return cell
     }
