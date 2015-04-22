@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>61658DC4731EA90B20ED5561</key>
+		<key>3C2A426D271F3E957AFA1C1A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C650724612900233A1DC59FA</key>
+		<key>4C7F527DAB80C6C64BF40311</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B9AC6E6008E9C49F8C0B5C30</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EA9CB2C78016D02C09E3125D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

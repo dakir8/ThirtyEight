@@ -180,7 +180,7 @@ QQ：896969882
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="daj-Pn-oxn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868" y="1409"/>
+            <point key="canvasLocation" x="2708" y="1378"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="J3r-cf-hJq">
@@ -213,7 +213,7 @@ QQ：896969882
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hR5-t5-R4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2558" y="1409"/>
+            <point key="canvasLocation" x="3452" y="1378"/>
         </scene>
         <!--Partner Table View Controller-->
         <scene sceneID="ZxF-Hd-kjs">
@@ -244,6 +244,36 @@ QQ：896969882
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWN-hW-EGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1435" y="2114"/>
+        </scene>
+        <!--Collection Type Table View Controller-->
+        <scene sceneID="tS8-KI-M7u">
+            <objects>
+                <tableViewController id="Mty-nm-Bu8" customClass="CollectionTypeTableViewController" customModule="ThirtyEight" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MF1-2o-OMj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="h2z-dh-oyn">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h2z-dh-oyn" id="r1E-pV-VNa">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Mty-nm-Bu8" id="zyo-8d-4Gu"/>
+                            <outlet property="delegate" destination="Mty-nm-Bu8" id="LsE-hY-MKO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="TdY-e3-1fQ"/>
+                    <connections>
+                        <segue destination="xLQ-JN-yX8" kind="show" identifier="show collection" id="DHm-aB-1if"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LFR-PU-4vW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1898" y="1413"/>
         </scene>
         <!--Partner Detail View Controller-->
         <scene sceneID="vqd-XS-ojG">
@@ -308,7 +338,7 @@ QQ：896969882
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8t-zD-mBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2142" y="2114"/>
+            <point key="canvasLocation" x="2270" y="2114"/>
         </scene>
         <!--作品展示-->
         <scene sceneID="Mur-YQ-Ooo">
@@ -322,7 +352,7 @@ QQ：896969882
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="xLQ-JN-yX8" kind="relationship" relationship="rootViewController" id="PSW-IN-Wg4"/>
+                        <segue destination="Mty-nm-Bu8" kind="relationship" relationship="rootViewController" id="kLJ-zY-F2a"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OFd-l1-O3y" userLabel="First Responder" sceneMemberID="firstResponder"/>

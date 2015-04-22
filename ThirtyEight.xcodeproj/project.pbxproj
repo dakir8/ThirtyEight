@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		651A24AC1AE686C600D126C8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651A24AB1AE686C600D126C8 /* SwiftyJSON.swift */; };
 		651A24AE1AE68A9E00D126C8 /* IConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651A24AD1AE68A9E00D126C8 /* IConstant.swift */; };
+		65F70EF01AE7E337002B63EC /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F70EEF1AE7E337002B63EC /* app_icon@2x.png */; };
+		65F70EF21AE7E33F002B63EC /* app_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F70EF11AE7E33F002B63EC /* app_icon@3x.png */; };
+		65F70EF51AE7E8AD002B63EC /* btn_video.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F70EF31AE7E8AD002B63EC /* btn_video.png */; };
+		65F70EF61AE7E8AD002B63EC /* btn_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F70EF41AE7E8AD002B63EC /* btn_photo.png */; };
+		65F70EF81AE7F95D002B63EC /* CollectionTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F70EF71AE7F95D002B63EC /* CollectionTypeTableViewController.swift */; };
 		C8912B37E5EAE9F59CCC9792 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602D000354DFD6DD37E3F8E9 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CF9E07711AE39C600001F5F8 /* PartnerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E076F1AE39C600001F5F8 /* PartnerTableViewController.swift */; };
 		CF9E07741AE3AC940001F5F8 /* PartnerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E07731AE3AC940001F5F8 /* PartnerDetailViewController.swift */; };
@@ -49,6 +54,12 @@
 		602D000354DFD6DD37E3F8E9 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		651A24AB1AE686C600D126C8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		651A24AD1AE68A9E00D126C8 /* IConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IConstant.swift; sourceTree = "<group>"; };
+		654CB1801AE7D1B200666E22 /* My-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "My-Bridging-Header.h"; sourceTree = "<group>"; };
+		65F70EEF1AE7E337002B63EC /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon@2x.png"; sourceTree = "<group>"; };
+		65F70EF11AE7E33F002B63EC /* app_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon@3x.png"; sourceTree = "<group>"; };
+		65F70EF31AE7E8AD002B63EC /* btn_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_video.png; sourceTree = "<group>"; };
+		65F70EF41AE7E8AD002B63EC /* btn_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_photo.png; sourceTree = "<group>"; };
+		65F70EF71AE7F95D002B63EC /* CollectionTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTypeTableViewController.swift; sourceTree = "<group>"; };
 		C42D25F504EF1238F545E1F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CE1B7C6F3429E998C19EB4C8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CF9E076F1AE39C600001F5F8 /* PartnerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PartnerTableViewController.swift; path = ../PartnerTableViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +130,10 @@
 		65FF3A841AE52B1E00CD95F5 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				65F70EF31AE7E8AD002B63EC /* btn_video.png */,
+				65F70EF41AE7E8AD002B63EC /* btn_photo.png */,
+				65F70EF11AE7E33F002B63EC /* app_icon@3x.png */,
+				65F70EEF1AE7E337002B63EC /* app_icon@2x.png */,
 				CF9E07BB1AE3E3610001F5F8 /* yuegang.jpg */,
 				CF9E07BC1AE3E3610001F5F8 /* guangming.jpg */,
 				CF9E07BD1AE3E3610001F5F8 /* jinbaba1.jpg */,
@@ -171,6 +186,7 @@
 				CF9E07A91AE3CC970001F5F8 /* ExibitionTableViewController.swift */,
 				CF9E07AB1AE3CDEA0001F5F8 /* WebViewController.swift */,
 				651A24AD1AE68A9E00D126C8 /* IConstant.swift */,
+				65F70EF71AE7F95D002B63EC /* CollectionTypeTableViewController.swift */,
 			);
 			path = ThirtyEight;
 			sourceTree = "<group>";
@@ -180,6 +196,7 @@
 			children = (
 				651A24AB1AE686C600D126C8 /* SwiftyJSON.swift */,
 				CFEE90011AE26EFF008CD5A2 /* Info.plist */,
+				654CB1801AE7D1B200666E22 /* My-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -285,13 +302,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65F70EF51AE7E8AD002B63EC /* btn_video.png in Resources */,
 				CF9E07C21AE3E3610001F5F8 /* jinbaba2.jpg in Resources */,
 				CF9E07B81AE3D3670001F5F8 /* company_icon.JPG in Resources */,
 				CFEE90081AE26EFF008CD5A2 /* Main.storyboard in Resources */,
 				CFEE900D1AE26EFF008CD5A2 /* LaunchScreen.xib in Resources */,
+				65F70EF21AE7E33F002B63EC /* app_icon@3x.png in Resources */,
 				CFEE900A1AE26EFF008CD5A2 /* Images.xcassets in Resources */,
 				CFEE90231AE270E4008CD5A2 /* dgtv_icon.jpeg in Resources */,
 				CF9E07C01AE3E3610001F5F8 /* guangming.jpg in Resources */,
+				65F70EF01AE7E337002B63EC /* app_icon@2x.png in Resources */,
 				CF9E07B31AE3D13C0001F5F8 /* tab_exibition.png in Resources */,
 				CF9E07C11AE3E3610001F5F8 /* jinbaba1.jpg in Resources */,
 				CF9E07BA1AE3DDF10001F5F8 /* qr_code.png in Resources */,
@@ -300,6 +320,7 @@
 				CFEE90291AE29156008CD5A2 /* PartnerCell.xib in Resources */,
 				CF9E07BF1AE3E3610001F5F8 /* yuegang.jpg in Resources */,
 				CF9E07B41AE3D13C0001F5F8 /* tab_partner.png in Resources */,
+				65F70EF61AE7E8AD002B63EC /* btn_photo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +391,7 @@
 				CFEE90051AE26EFF008CD5A2 /* ViewController.swift in Sources */,
 				651A24AE1AE68A9E00D126C8 /* IConstant.swift in Sources */,
 				651A24AC1AE686C600D126C8 /* SwiftyJSON.swift in Sources */,
+				65F70EF81AE7F95D002B63EC /* CollectionTypeTableViewController.swift in Sources */,
 				CF9E07AA1AE3CC970001F5F8 /* ExibitionTableViewController.swift in Sources */,
 				CF9E07AC1AE3CDEA0001F5F8 /* WebViewController.swift in Sources */,
 				CF9E07741AE3AC940001F5F8 /* PartnerDetailViewController.swift in Sources */,
@@ -508,6 +530,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ThirtyEight/My-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -523,6 +546,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ThirtyEight/My-Bridging-Header.h";
 			};
 			name = Release;
 		};

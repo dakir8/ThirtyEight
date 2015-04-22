@@ -44,9 +44,7 @@ class ExibitionTableViewController: UITableViewController {
 
         self.tableView.registerNib(UINib(nibName: "PartnerCell", bundle: nil), forCellReuseIdentifier: reusableIdentifier)
         
-        let url = IConstant.baseUrl + "getVideoCollection.php"
-        
-        Alamofire.request(.GET, url, parameters: nil)
+        Alamofire.request(.GET, IConstant.baseUrl, parameters: ["c":"video", "m":"getVideos"])
             .responseJSON { (req, res, json, error) in
                 if(error != nil) {
                     NSLog("Error: \(error)")
@@ -54,9 +52,8 @@ class ExibitionTableViewController: UITableViewController {
                     println(res)
                 }
                 else {
-                    NSLog("Success: \(url)")
                     var json = JSON(json!)
-                    for video in json["video_collections"][0]["videos"].arrayValue {
+                    for video in json["videos"].arrayValue {
                         self.products.append(Product(json: video))
                     }
                     
@@ -92,9 +89,11 @@ class ExibitionTableViewController: UITableViewController {
         
         // Configure the cell...
         
-        cell.title?.text = products[indexPath.row].name
-        if let imageUrl = products[indexPath.row].imageUrl {
-            cell.thumbnail.image = UIImage(named: imageUrl)
+        let product = products[indexPath.row];
+        cell.title?.text = product.name
+        if let imageUrl = product.imageUrl {
+//            cell.imageView?.setImageWithURL(NSURL(string: imageUrl), placeholderImage: UIImage(named: "yuegang.jpg"))
+            cell.imageView?.sd_setImageWithURL(NSURL(string: imageUrl), placeholderImage: UIImage(named: "yuegang.jpg"))
         }
         
         

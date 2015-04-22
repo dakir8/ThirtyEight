@@ -9,5 +9,5 @@
 import Foundation
 
 class IConstant {
-    static let baseUrl = "http://112.74.86.53/38/"
+    static let baseUrl = "http://112.74.86.53/38/index.php"
 }

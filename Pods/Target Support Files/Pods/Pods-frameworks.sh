@@ -48,8 +48,12 @@ code_sign() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework 'AFNetworking.framework'
   install_framework 'Alamofire.framework'
+  install_framework 'SDWebImage.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework 'AFNetworking.framework'
   install_framework 'Alamofire.framework'
+  install_framework 'SDWebImage.framework'
 fi
