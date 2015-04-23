@@ -10,5 +10,7 @@
 #define ThirtyEight_My_Bridging_Header_h
 
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <MWPhotoBrowser/MWPhoto.h>
+#import <MWPhotoBrowser/MWPhotoBrowser.h>
 
 #endif

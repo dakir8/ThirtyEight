@@ -150,7 +150,7 @@ QQ：896969882
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eej-IY-Ymn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="662" y="2114"/>
+            <point key="canvasLocation" x="592" y="3036"/>
         </scene>
         <!--作品展示-->
         <scene sceneID="fN8-Od-Gbq">
@@ -243,9 +243,9 @@ QQ：896969882
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWN-hW-EGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1435" y="2114"/>
+            <point key="canvasLocation" x="1365" y="3036"/>
         </scene>
-        <!--Collection Type Table View Controller-->
+        <!--分类-->
         <scene sceneID="tS8-KI-M7u">
             <objects>
                 <tableViewController id="Mty-nm-Bu8" customClass="CollectionTypeTableViewController" customModule="ThirtyEight" customModuleProvider="target" sceneMemberID="viewController">
@@ -266,14 +266,41 @@ QQ：896969882
                             <outlet property="delegate" destination="Mty-nm-Bu8" id="LsE-hY-MKO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="TdY-e3-1fQ"/>
+                    <navigationItem key="navigationItem" title="分类" id="TdY-e3-1fQ"/>
                     <connections>
-                        <segue destination="xLQ-JN-yX8" kind="show" identifier="show collection" id="DHm-aB-1if"/>
+                        <segue destination="xLQ-JN-yX8" kind="show" identifier="show video collection" id="DHm-aB-1if"/>
+                        <segue destination="BUA-h1-9VH" kind="show" identifier="show picture collection" id="qou-Yj-8Kl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFR-PU-4vW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1898" y="1413"/>
+        </scene>
+        <!--Picture Collection Table View Controller-->
+        <scene sceneID="Vpx-WG-J8z">
+            <objects>
+                <tableViewController id="BUA-h1-9VH" customClass="PictureCollectionTableViewController" customModule="ThirtyEight" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Z7h-Wc-OB4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="I30-GJ-OOW">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I30-GJ-OOW" id="iXV-r2-saF">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BUA-h1-9VH" id="sKV-KX-C6q"/>
+                            <outlet property="delegate" destination="BUA-h1-9VH" id="FgG-Up-Kee"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t7A-rM-4iq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2684" y="2144"/>
         </scene>
         <!--Partner Detail View Controller-->
         <scene sceneID="vqd-XS-ojG">
@@ -338,7 +365,7 @@ QQ：896969882
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8t-zD-mBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2270" y="2114"/>
+            <point key="canvasLocation" x="2200" y="3036"/>
         </scene>
         <!--作品展示-->
         <scene sceneID="Mur-YQ-Ooo">

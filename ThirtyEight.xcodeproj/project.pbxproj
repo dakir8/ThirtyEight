@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65190DAA1AE9179D00379AE5 /* PictureCollectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65190DA91AE9179D00379AE5 /* PictureCollectionTableViewController.swift */; };
+		65190DAF1AE91B5600379AE5 /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65190DAD1AE91B5600379AE5 /* LabelCell.swift */; };
+		65190DB01AE91B5600379AE5 /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65190DAE1AE91B5600379AE5 /* LabelCell.xib */; };
 		651A24AC1AE686C600D126C8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651A24AB1AE686C600D126C8 /* SwiftyJSON.swift */; };
 		651A24AE1AE68A9E00D126C8 /* IConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651A24AD1AE68A9E00D126C8 /* IConstant.swift */; };
 		65F70EF01AE7E337002B63EC /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F70EEF1AE7E337002B63EC /* app_icon@2x.png */; };
@@ -52,6 +55,9 @@
 
 /* Begin PBXFileReference section */
 		602D000354DFD6DD37E3F8E9 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65190DA91AE9179D00379AE5 /* PictureCollectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureCollectionTableViewController.swift; sourceTree = "<group>"; };
+		65190DAD1AE91B5600379AE5 /* LabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
+		65190DAE1AE91B5600379AE5 /* LabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
 		651A24AB1AE686C600D126C8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		651A24AD1AE68A9E00D126C8 /* IConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IConstant.swift; sourceTree = "<group>"; };
 		654CB1801AE7D1B200666E22 /* My-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "My-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -127,9 +133,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		65190DB11AE9205100379AE5 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				CFEE90261AE29156008CD5A2 /* PartnerCell.swift */,
+				CFEE90271AE29156008CD5A2 /* PartnerCell.xib */,
+				65190DAD1AE91B5600379AE5 /* LabelCell.swift */,
+				65190DAE1AE91B5600379AE5 /* LabelCell.xib */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
 		65FF3A841AE52B1E00CD95F5 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				CFEE90221AE270E4008CD5A2 /* dgtv_icon.jpeg */,
 				65F70EF31AE7E8AD002B63EC /* btn_video.png */,
 				65F70EF41AE7E8AD002B63EC /* btn_photo.png */,
 				65F70EF11AE7E33F002B63EC /* app_icon@3x.png */,
@@ -171,22 +189,19 @@
 		CFEE8FFF1AE26EFF008CD5A2 /* ThirtyEight */ = {
 			isa = PBXGroup;
 			children = (
-				65FF3A841AE52B1E00CD95F5 /* resources */,
-				CF9E07731AE3AC940001F5F8 /* PartnerDetailViewController.swift */,
-				CF9E076F1AE39C600001F5F8 /* PartnerTableViewController.swift */,
+				CFEE90061AE26EFF008CD5A2 /* Main.storyboard */,
 				CFEE90021AE26EFF008CD5A2 /* AppDelegate.swift */,
 				CFEE90041AE26EFF008CD5A2 /* ViewController.swift */,
-				CFEE90061AE26EFF008CD5A2 /* Main.storyboard */,
-				CFEE90221AE270E4008CD5A2 /* dgtv_icon.jpeg */,
-				CFEE90091AE26EFF008CD5A2 /* Images.xcassets */,
-				CFEE900B1AE26EFF008CD5A2 /* LaunchScreen.xib */,
-				CFEE90001AE26EFF008CD5A2 /* Supporting Files */,
-				CFEE90261AE29156008CD5A2 /* PartnerCell.swift */,
-				CFEE90271AE29156008CD5A2 /* PartnerCell.xib */,
+				651A24AD1AE68A9E00D126C8 /* IConstant.swift */,
+				CF9E07731AE3AC940001F5F8 /* PartnerDetailViewController.swift */,
+				CF9E076F1AE39C600001F5F8 /* PartnerTableViewController.swift */,
 				CF9E07A91AE3CC970001F5F8 /* ExibitionTableViewController.swift */,
 				CF9E07AB1AE3CDEA0001F5F8 /* WebViewController.swift */,
-				651A24AD1AE68A9E00D126C8 /* IConstant.swift */,
 				65F70EF71AE7F95D002B63EC /* CollectionTypeTableViewController.swift */,
+				65190DA91AE9179D00379AE5 /* PictureCollectionTableViewController.swift */,
+				65FF3A841AE52B1E00CD95F5 /* resources */,
+				CFEE90001AE26EFF008CD5A2 /* Supporting Files */,
+				65190DB11AE9205100379AE5 /* cell */,
 			);
 			path = ThirtyEight;
 			sourceTree = "<group>";
@@ -194,6 +209,8 @@
 		CFEE90001AE26EFF008CD5A2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CFEE90091AE26EFF008CD5A2 /* Images.xcassets */,
+				CFEE900B1AE26EFF008CD5A2 /* LaunchScreen.xib */,
 				651A24AB1AE686C600D126C8 /* SwiftyJSON.swift */,
 				CFEE90011AE26EFF008CD5A2 /* Info.plist */,
 				654CB1801AE7D1B200666E22 /* My-Bridging-Header.h */,
@@ -304,6 +321,7 @@
 			files = (
 				65F70EF51AE7E8AD002B63EC /* btn_video.png in Resources */,
 				CF9E07C21AE3E3610001F5F8 /* jinbaba2.jpg in Resources */,
+				65190DB01AE91B5600379AE5 /* LabelCell.xib in Resources */,
 				CF9E07B81AE3D3670001F5F8 /* company_icon.JPG in Resources */,
 				CFEE90081AE26EFF008CD5A2 /* Main.storyboard in Resources */,
 				CFEE900D1AE26EFF008CD5A2 /* LaunchScreen.xib in Resources */,
@@ -388,11 +406,13 @@
 			files = (
 				CF9E07711AE39C600001F5F8 /* PartnerTableViewController.swift in Sources */,
 				CFEE90281AE29156008CD5A2 /* PartnerCell.swift in Sources */,
+				65190DAF1AE91B5600379AE5 /* LabelCell.swift in Sources */,
 				CFEE90051AE26EFF008CD5A2 /* ViewController.swift in Sources */,
 				651A24AE1AE68A9E00D126C8 /* IConstant.swift in Sources */,
 				651A24AC1AE686C600D126C8 /* SwiftyJSON.swift in Sources */,
 				65F70EF81AE7F95D002B63EC /* CollectionTypeTableViewController.swift in Sources */,
 				CF9E07AA1AE3CC970001F5F8 /* ExibitionTableViewController.swift in Sources */,
+				65190DAA1AE9179D00379AE5 /* PictureCollectionTableViewController.swift in Sources */,
 				CF9E07AC1AE3CDEA0001F5F8 /* WebViewController.swift in Sources */,
 				CF9E07741AE3AC940001F5F8 /* PartnerDetailViewController.swift in Sources */,
 				CFEE90031AE26EFF008CD5A2 /* AppDelegate.swift in Sources */,

@@ -10,20 +10,20 @@
 
 class CollectionTypeTableViewController: UITableViewController {
 
-    let reusableIdentifier = "PartnerCell"
+    let reusableIdentifier = "LabelCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.registerNib(UINib(nibName: "PartnerCell", bundle: nil), forCellReuseIdentifier: reusableIdentifier)
+        self.tableView.registerNib(UINib(nibName: "LabelCell", bundle: nil), forCellReuseIdentifier: reusableIdentifier)
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch(indexPath.row) {
         case 0:
-            performSegueWithIdentifier("show collection", sender: self)
+            performSegueWithIdentifier("show video collection", sender: self)
         case 1:
-            fallthrough
+            performSegueWithIdentifier("show picture collection", sender: self)
         default:
             break
         }
@@ -36,18 +36,18 @@ class CollectionTypeTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100
+        return 50
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(reusableIdentifier, forIndexPath: indexPath) as! PartnerCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(reusableIdentifier, forIndexPath: indexPath) as! LabelCell
         
         switch(indexPath.row) {
         case 0:
-            cell.title?.text = "视频"
+            cell.nameLabel?.text = "视频"
         case 1:
-            cell.title?.text = "照片"
+            cell.nameLabel?.text = "照片"
         default:
             break;
         }

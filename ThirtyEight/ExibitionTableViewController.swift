@@ -56,9 +56,7 @@ class ExibitionTableViewController: UITableViewController {
                     for video in json["videos"].arrayValue {
                         self.products.append(Product(json: video))
                     }
-                    
-                    println(self.products)
-                    
+                                        
                     self.tableView.reloadData()
                 }
         }
