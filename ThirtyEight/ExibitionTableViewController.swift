@@ -9,31 +9,32 @@
 import UIKit
 import Alamofire
 
-class ExibitionTableViewController: UITableViewController {
+class Product: Printable {
+    let name: String?
+    let videoUrl: String?
+    let imageUrl: String?
     
-    class Product: Printable {
-        let name: String?
-        let videoUrl: String?
-        let imageUrl: String?
-        
-        var description: String {
-            return "name:\(self.name), videoUrl:\(self.videoUrl), imageUrl: \(self.imageUrl)"
-        }
-        
-        init(name: String, videoUrl: String, imageUrl: String) {
-            self.name = name
-            self.videoUrl = videoUrl
-            self.imageUrl = imageUrl
-        }
-        
-        init(json: JSON) {
-            self.name = json["video_name"].string
-            self.videoUrl = json["video_url"].string
-            self.imageUrl = json["thumbnail_url"].string
-        }
-        
-        
+    var description: String {
+        return "name:\(self.name), videoUrl:\(self.videoUrl), imageUrl: \(self.imageUrl)"
     }
+    
+    init(name: String, videoUrl: String, imageUrl: String) {
+        self.name = name
+        self.videoUrl = videoUrl
+        self.imageUrl = imageUrl
+    }
+    
+    init(json: JSON) {
+        self.name = json["video_name"].string
+        self.videoUrl = json["video_url"].string
+        self.imageUrl = json["thumbnail_url"].string
+    }
+    
+    
+}
+
+
+class ExibitionTableViewController: UITableViewController {
     
     let reusableIdentifier = "PartnerCell"
     
@@ -115,7 +116,7 @@ class ExibitionTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if(segue.identifier == "showWeb") {
             if let vc = segue.destinationViewController as? WebViewController {
-                vc.videoUrl = products[tableView.indexPathForSelectedRow()!.row].videoUrl
+                vc.video = products[tableView.indexPathForSelectedRow()!.row]
             }
         }
     }

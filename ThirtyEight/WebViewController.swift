@@ -10,16 +10,20 @@ class WebViewController: UIViewController {
     
     @IBOutlet weak var webview: UIWebView! {
         didSet {
-            webview.loadRequest(NSURLRequest(URL: NSURL(string: videoUrl!)!))
+            if let videoUrl = self.video?.videoUrl {
+                webview.loadRequest(NSURLRequest(URL: NSURL(string: videoUrl)!))
+            }
+            
         }
     }
     
-    var videoUrl: String?
+    var video: Product?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.setRightBarButtonItem(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: "shareAction"), animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,15 +31,15 @@ class WebViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func shareAction() {
+        println("shareAction(): url = \(self.video?.videoUrl)")
+        
+        let title = self.video!.name
+        let url = NSURL(string: self.video!.videoUrl!)
+        
+        let shareVC = UIActivityViewController(activityItems: [title!, url!], applicationActivities: nil)
+        
+        self.presentViewController(shareVC, animated: true, completion: nil)
     }
-    */
 
 }
