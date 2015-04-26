@@ -12,5 +12,6 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <MWPhotoBrowser/MWPhoto.h>
 #import <MWPhotoBrowser/MWPhotoBrowser.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 #endif

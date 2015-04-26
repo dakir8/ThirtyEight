@@ -1,16 +1,12 @@
-//
-//  WebViewController.swift
-//  ThirtyEight
-//
-//  Created by 邱建平 on 15/4/19.
-//  Copyright (c) 2015年 daniel. All rights reserved.
-//
 
-class WebViewController: UIViewController {
+import MBProgressHUD
+
+class WebViewController: UIViewController, UIWebViewDelegate {
     
     @IBOutlet weak var webview: UIWebView! {
         didSet {
             if let videoUrl = self.video?.videoUrl {
+                webview.delegate = self
                 webview.loadRequest(NSURLRequest(URL: NSURL(string: videoUrl)!))
             }
             
@@ -38,8 +34,20 @@ class WebViewController: UIViewController {
         let url = NSURL(string: self.video!.videoUrl!)
         
         let shareVC = UIActivityViewController(activityItems: [title!, url!], applicationActivities: nil)
+        shareVC.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
         
         self.presentViewController(shareVC, animated: true, completion: nil)
     }
 
+    func webViewDidFinishLoad(webView: UIWebView) {
+        MBProgressHUD.hideHUDForView(webView, animated: true)
+    }
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        MBProgressHUD.showHUDAddedTo(webView, animated: true)
+    }
+    
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
+        MBProgressHUD.hideHUDForView(webView, animated: true)
+    }
 }

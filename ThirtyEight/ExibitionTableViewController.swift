@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import MBProgressHUD
 
 class Product: Printable {
     let name: String?
@@ -45,6 +46,7 @@ class ExibitionTableViewController: UITableViewController {
 
         self.tableView.registerNib(UINib(nibName: "PartnerCell", bundle: nil), forCellReuseIdentifier: reusableIdentifier)
         
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         Alamofire.request(.GET, IConstant.baseUrl, parameters: ["c":"video", "m":"getVideos"])
             .responseJSON { (req, res, json, error) in
                 if(error != nil) {
@@ -53,6 +55,7 @@ class ExibitionTableViewController: UITableViewController {
                     println(res)
                 }
                 else {
+                    MBProgressHUD.hideHUDForView(self.view, animated: true)
                     var json = JSON(json!)
                     for video in json["videos"].arrayValue {
                         self.products.append(Product(json: video))

@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import MBProgressHUD
 
 class Partner {
     let partnerId: String?
@@ -39,6 +40,7 @@ class PartnerTableViewController: UITableViewController {
         
         self.tableView.registerNib(UINib(nibName: "PartnerCell", bundle: nil), forCellReuseIdentifier: reusableIdentifier)
 
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         Alamofire.request(.GET, IConstant.baseUrl, parameters: ["c":"partner", "m":"getPartners"])
             .responseJSON { (req, res, json, error) in
                 if(error != nil) {
@@ -47,6 +49,7 @@ class PartnerTableViewController: UITableViewController {
                     println(res)
                 }
                 else {
+                    MBProgressHUD.hideHUDForView(self.view, animated: true)
                     var json = JSON(json!)
                     for partner in json["partners"].arrayValue {
                         self.partnerList.append(Partner(json: partner))

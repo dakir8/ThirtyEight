@@ -46,6 +46,7 @@ class PictureCollectionTableViewController: UITableViewController, MWPhotoBrowse
         
         self.tableView.registerNib(UINib(nibName: "LabelCell", bundle: nil), forCellReuseIdentifier: reusableIdentifier)
         
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         Alamofire.request(.GET, IConstant.baseUrl, parameters: ["c":"picture", "m":"getAllPictures"])
             .responseJSON { (req, res, json, error) in
                 if(error != nil) {
@@ -54,6 +55,7 @@ class PictureCollectionTableViewController: UITableViewController, MWPhotoBrowse
                     println(res)
                 }
                 else {
+                    MBProgressHUD.hideHUDForView(self.view, animated: true)
                     var json = JSON(json!)
                     for pictureCollection in json["picture_collections"].arrayValue {
                         self.pictureCollections.append(PictureCollection(json: pictureCollection))
