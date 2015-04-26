@@ -6,8 +6,6 @@
 //  Copyright (c) 2015年 daniel. All rights reserved.
 //
 
-import UIKit
-
 class WebViewController: UIViewController {
     
     @IBOutlet weak var webview: UIWebView! {

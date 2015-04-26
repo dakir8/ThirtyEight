@@ -6,15 +6,19 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>4CD1B413-C599-484A-B589-5177DA3ADAC4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ThirtyEight</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>3B5AF771EB1F10A60105BDB72FF876C3DB1F6C8D</key>
 		<string>https://github.com/dakir8/ThirtyEight.git</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ThirtyEight.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3B5AF771EB1F10A60105BDB72FF876C3DB1F6C8D</key>
-		<string>ThirtyEight/</string>
+		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/dakir8/ThirtyEight.git</string>

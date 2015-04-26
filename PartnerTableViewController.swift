@@ -7,40 +7,55 @@
 //
 
 import UIKit
+import Alamofire
+
+class Partner {
+    let partnerId: String?
+    let name: String?
+    let imageUrl: String?
+    let desc: String?
+    
+    init(json: JSON) {
+        self.partnerId = json["partner_id"].string
+        self.name = json["partner_name"].string
+        self.desc = json["partner_desc"].string
+        self.imageUrl = json["thumbnail_url"].string
+    }
+}
 
 class PartnerTableViewController: UITableViewController {
     
-    class Partner {
-        let name: String?
-        let imageUrl: String?
-        let desc: String?
-        
-        init(name: String, imageUrl: String, desc: String = "") {
-            self.name = name
-            self.imageUrl = imageUrl
-            self.desc = desc
-        }
-    }
-    
     let reusableIdentifier = "PartnerCell"
-    var partnerList = Array<Partner>()
+    var partnerList = [Partner]()
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        partnerList.append(Partner(name: "东莞电视台", imageUrl: "dgtv_icon.jpeg", desc: "东莞广播电视台成立于2005年3月28日，整合了东莞人民广播电台、东莞电视台、东莞阳光网三大媒体，是中共东莞市委宣传部领导下的正处级事业单位，是南方广播影视传媒集团的成员单位。现有员工500多人，设办公室、总编室、人力资源部、财务部、总工办、新闻中心、广播中心、文艺中心、阳光网站、技术中心、广告经营中心、网络经营部等16个机构。"))
-        
-        partnerList.append(Partner(name: "东莞城市学院", imageUrl: "city_u.jpeg", desc: "东莞理工学院城市学院是2004年6月经国家教育部批准成立的独立学院。2009年，由东莞理工学院和广东鸿发投资集团有限公司合作举办，并于2011年，按照“创办一流大学、办百年名校”的办学目标，择址东莞市寮步镇建设新校区。当年9月，5000名大一新生入驻。"))
+//        partnerList.append(Partner(name: "东莞电视台", imageUrl: "dgtv_icon.jpeg", desc: "东莞广播电视台成立于2005年3月28日，整合了东莞人民广播电台、东莞电视台、东莞阳光网三大媒体，是中共东莞市委宣传部领导下的正处级事业单位，是南方广播影视传媒集团的成员单位。现有员工500多人，设办公室、总编室、人力资源部、财务部、总工办、新闻中心、广播中心、文艺中心、阳光网站、技术中心、广告经营中心、网络经营部等16个机构。"))
+//        
+//        partnerList.append(Partner(name: "东莞城市学院", imageUrl: "city_u.jpeg", desc: "东莞理工学院城市学院是2004年6月经国家教育部批准成立的独立学院。2009年，由东莞理工学院和广东鸿发投资集团有限公司合作举办，并于2011年，按照“创办一流大学、办百年名校”的办学目标，择址东莞市寮步镇建设新校区。当年9月，5000名大一新生入驻。"))
         
         self.title = "合作伙伴"
         
         self.tableView.registerNib(UINib(nibName: "PartnerCell", bundle: nil), forCellReuseIdentifier: reusableIdentifier)
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        Alamofire.request(.GET, IConstant.baseUrl, parameters: ["c":"partner", "m":"getPartners"])
+            .responseJSON { (req, res, json, error) in
+                if(error != nil) {
+                    NSLog("Error: \(error)")
+                    println(req)
+                    println(res)
+                }
+                else {
+                    var json = JSON(json!)
+                    for partner in json["partners"].arrayValue {
+                        self.partnerList.append(Partner(json: partner))
+                    }
+                    
+                    self.tableView.reloadData()
+                }
+        }
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,7 +84,12 @@ class PartnerTableViewController: UITableViewController {
         // Configure the cell...
         
         cell.title?.text = partnerList[indexPath.row].name
-        cell.thumbnail?.image = UIImage(named: partnerList[indexPath.row].imageUrl!)
+        
+        let partner = self.partnerList[indexPath.row]
+        
+        if let imageUrl = partner.imageUrl {
+            cell.imageView?.sd_setImageWithURL(NSURL(string: imageUrl), placeholderImage: UIImage(named: "yuegang.jpg"))
+        }
 
         return cell
     }
@@ -126,9 +146,7 @@ class PartnerTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if(segue.identifier == "partnerDetail") {
             if let vc = segue.destinationViewController as? PartnerDetailViewController {
-                vc.partnerName = partnerList[tableView.indexPathForSelectedRow()!.row].name
-                vc.partnerImage = partnerList[tableView.indexPathForSelectedRow()!.row].imageUrl
-                vc.partnerDesc = partnerList[tableView.indexPathForSelectedRow()!.row].desc
+                vc.partner = self.partnerList[self.tableView.indexPathForSelectedRow()!.row]
             }
         }
         

@@ -12,28 +12,30 @@ class PartnerDetailViewController: UIViewController {
 
     @IBOutlet weak var imgThumbnail: UIImageView! {
         didSet {
-            imgThumbnail.image = UIImage(named: partnerImage!)
+            if let imageUrl = self.partner?.imageUrl {
+                imgThumbnail.sd_setImageWithURL(NSURL(string: imageUrl), placeholderImage: UIImage(named: "yuegang.jpg"))
+            }
         }
     }
     
     @IBOutlet weak var lblTitle: UILabel! {
         didSet {
-            lblTitle.text = partnerName
+            if let name = self.partner?.name {
+                lblTitle.text = name
+            }
         }
     }
     
     @IBOutlet weak var tvDesc: UITextView! {
         didSet {
-            tvDesc.text = partnerDesc
+            if let desc = self.partner?.desc {
+                tvDesc.text = desc
+            }
         }
     }
     
     
-    var partnerName: String?
-    
-    var partnerImage: String?
-    
-    var partnerDesc: String?
+    var partner: Partner?
     
     override func viewDidLoad() {
         super.viewDidLoad()
