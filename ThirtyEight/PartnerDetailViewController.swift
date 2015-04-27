@@ -13,7 +13,9 @@ class PartnerDetailViewController: UIViewController {
     @IBOutlet weak var imgThumbnail: UIImageView! {
         didSet {
             if let imageUrl = self.partner?.imageUrl {
-                imgThumbnail.sd_setImageWithURL(NSURL(string: imageUrl), placeholderImage: UIImage(named: "yuegang.jpg"))
+                imgThumbnail.sd_setImageWithURL(NSURL(string: imageUrl), placeholderImage: UIImage(named: "placeholder.png"))
+            } else {
+                imgThumbnail.image = UIImage(named: "placeholder.png")
             }
         }
     }

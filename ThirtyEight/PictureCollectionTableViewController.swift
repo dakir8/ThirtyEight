@@ -46,7 +46,13 @@ class PictureCollectionTableViewController: UITableViewController, MWPhotoBrowse
         
         self.tableView.registerNib(UINib(nibName: "LabelCell", bundle: nil), forCellReuseIdentifier: reusableIdentifier)
         
+        refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        refresh(self)
+    }
+    
+    func refresh(sender: AnyObject) {
         Alamofire.request(.GET, IConstant.baseUrl, parameters: ["c":"picture", "m":"getAllPictures"])
             .responseJSON { (req, res, json, error) in
                 if(error != nil) {
@@ -56,15 +62,16 @@ class PictureCollectionTableViewController: UITableViewController, MWPhotoBrowse
                 }
                 else {
                     MBProgressHUD.hideHUDForView(self.view, animated: true)
+                    self.refreshControl?.endRefreshing()
                     var json = JSON(json!)
+                    self.pictureCollections.removeAll(keepCapacity: false)
                     for pictureCollection in json["picture_collections"].arrayValue {
                         self.pictureCollections.append(PictureCollection(json: pictureCollection))
                     }
-                                        
+                    
                     self.tableView.reloadData()
                 }
-            }
-
+        }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -29,8 +29,8 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="394" id="VHl-0e-A7v"/>
                                                 </constraints>
-                                                <string key="text">Hello，欢迎你关注我，我叫小度，是一个热爱生活、向往自由、喜欢阅读，喜欢思考，喜欢摄影的人，我们团队的微信公众账号叫“38摄氏度工作室”，我们团队的服务范围：   
- 1、企业宣传片  婚礼跟拍  广告产品拍摄 微电影  专题片  Mv制作  各类纪录片  影视广告
+                                                <mutableString key="text">Hello，欢迎你关注我，我叫小度，是一个热爱生活、向往自由、喜欢阅读，喜欢思考，喜欢摄影的人，我们团队的微信公众账号叫“38摄氏度工作室”，我们团队的服务范围：   
+1、企业宣传片  婚礼跟拍  广告产品拍摄 微电影  专题片  Mv制作  各类纪录片  影视广告
 2、户外广告（易拉宝、拉网展架、X展架、LED、户外指示牌、灯箱、T牌等）；印刷品（单张、海报、册子、手提袋等） 
 
 38℃，爱的温度。
@@ -42,9 +42,10 @@ QQ：896969882
 
 电话：15916969882
 
-微信二维码：</string>
+微信二维码：</mutableString>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" address="YES"/>
                                             </textView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qr_code.png" translatesAutoresizingMaskIntoConstraints="NO" id="1QU-Ha-RHH">
                                                 <rect key="frame" x="200" y="630" width="200" height="200"/>
@@ -156,7 +157,7 @@ QQ：896969882
         <scene sceneID="fN8-Od-Gbq">
             <objects>
                 <tableViewController id="xLQ-JN-yX8" customClass="ExibitionTableViewController" customModule="ThirtyEight" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bey-lf-7V9">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bey-lf-7V9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -174,6 +175,17 @@ QQ：896969882
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="作品展示" id="BO2-ps-T7G"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Oer-AM-BQr">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle">
+                            <fragment content="向下拉刷新">
+                                <attributes>
+                                    <font key="NSFont" size="11" name="STHeitiSC-Light"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </refreshControl>
                     <connections>
                         <segue destination="aet-z9-Lem" kind="show" identifier="showWeb" id="8JJ-iG-Paz"/>
                     </connections>
@@ -237,6 +249,17 @@ QQ：896969882
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ThH-bb-axP"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="4Ji-HT-0jA">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle">
+                            <fragment content="向下拉刷新">
+                                <attributes>
+                                    <font key="NSFont" size="11" name="STHeitiSC-Light"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </refreshControl>
                     <connections>
                         <segue destination="gq4-39-aog" kind="show" identifier="partnerDetail" id="GSj-Us-mAJ"/>
                     </connections>
@@ -297,6 +320,17 @@ QQ：896969882
                             <outlet property="delegate" destination="BUA-h1-9VH" id="FgG-Up-Kee"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Qm5-OC-SVd">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle">
+                            <fragment content="向下拉刷新">
+                                <attributes>
+                                    <font key="NSFont" size="11" name="STHeitiSC-Light"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t7A-rM-4iq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

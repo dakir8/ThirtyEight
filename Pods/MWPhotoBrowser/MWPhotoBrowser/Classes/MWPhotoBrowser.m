@@ -255,9 +255,11 @@
     // Left button - Grid
     if (_enableGrid) {
         hasItems = YES;
-        NSString *buttonName = @"UIBarButtonItemGrid";
+        NSString *buttonName = @"UIBarButtonItemGrid.png";
         if (SYSTEM_VERSION_LESS_THAN(@"7")) buttonName = @"UIBarButtonItemGridiOS6";
-        [items addObject:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"MWPhotoBrowser.bundle/images/%@.png", buttonName]] style:UIBarButtonItemStylePlain target:self action:@selector(showGridAnimated)]];
+//        [items addObject:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"MWPhotoBrowser.bundle/images/%@.png", buttonName]] style:UIBarButtonItemStylePlain target:self action:@selector(showGridAnimated)]];
+        [items addObject:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:buttonName] style:UIBarButtonItemStylePlain target:self action:@selector(showGridAnimated)]];
+
     } else {
         [items addObject:fixedSpace];
     }

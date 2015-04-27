@@ -40,7 +40,14 @@ class PartnerTableViewController: UITableViewController {
         
         self.tableView.registerNib(UINib(nibName: "PartnerCell", bundle: nil), forCellReuseIdentifier: reusableIdentifier)
 
+        refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        refresh(self)
+    }
+    
+    func refresh(sender: AnyObject) {
+        
         Alamofire.request(.GET, IConstant.baseUrl, parameters: ["c":"partner", "m":"getPartners"])
             .responseJSON { (req, res, json, error) in
                 if(error != nil) {
@@ -50,7 +57,9 @@ class PartnerTableViewController: UITableViewController {
                 }
                 else {
                     MBProgressHUD.hideHUDForView(self.view, animated: true)
+                    self.refreshControl?.endRefreshing()
                     var json = JSON(json!)
+                    self.partnerList.removeAll(keepCapacity: false)
                     for partner in json["partners"].arrayValue {
                         self.partnerList.append(Partner(json: partner))
                     }
@@ -91,7 +100,9 @@ class PartnerTableViewController: UITableViewController {
         let partner = self.partnerList[indexPath.row]
         
         if let imageUrl = partner.imageUrl {
-            cell.imageView?.sd_setImageWithURL(NSURL(string: imageUrl), placeholderImage: UIImage(named: "yuegang.jpg"))
+            cell.imageView?.sd_setImageWithURL(NSURL(string: imageUrl), placeholderImage: UIImage(named: "placeholder.png"))
+        } else {
+            cell.imageView?.image = UIImage(named: "placeholder.png")
         }
 
         return cell

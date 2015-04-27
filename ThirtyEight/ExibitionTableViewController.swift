@@ -43,10 +43,17 @@ class ExibitionTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.tableView.registerNib(UINib(nibName: "PartnerCell", bundle: nil), forCellReuseIdentifier: reusableIdentifier)
         
+        refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        refresh(self)
+        
+    }
+    
+    func refresh(sender: AnyObject) {
         Alamofire.request(.GET, IConstant.baseUrl, parameters: ["c":"video", "m":"getVideos"])
             .responseJSON { (req, res, json, error) in
                 if(error != nil) {
@@ -56,15 +63,16 @@ class ExibitionTableViewController: UITableViewController {
                 }
                 else {
                     MBProgressHUD.hideHUDForView(self.view, animated: true)
+                    self.refreshControl?.endRefreshing()
                     var json = JSON(json!)
+                    self.products.removeAll(keepCapacity: false)
                     for video in json["videos"].arrayValue {
                         self.products.append(Product(json: video))
                     }
-                                        
+                    
                     self.tableView.reloadData()
                 }
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,8 +102,9 @@ class ExibitionTableViewController: UITableViewController {
         let product = products[indexPath.row];
         cell.title?.text = product.name
         if let imageUrl = product.imageUrl {
-//            cell.imageView?.setImageWithURL(NSURL(string: imageUrl), placeholderImage: UIImage(named: "yuegang.jpg"))
-            cell.imageView?.sd_setImageWithURL(NSURL(string: imageUrl), placeholderImage: UIImage(named: "yuegang.jpg"))
+            cell.imageView?.sd_setImageWithURL(NSURL(string: imageUrl), placeholderImage: UIImage(named: "placeholder.png"))
+        } else {
+            cell.imageView?.image = UIImage(named: "placeholder.png")
         }
         
         
