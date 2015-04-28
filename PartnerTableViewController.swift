@@ -14,13 +14,15 @@ class Partner {
     let partnerId: String?
     let name: String?
     let imageUrl: String?
+    let thumbnailUrl: String?
     let desc: String?
     
     init(json: JSON) {
         self.partnerId = json["partner_id"].string
         self.name = json["partner_name"].string
         self.desc = json["partner_desc"].string
-        self.imageUrl = json["thumbnail_url"].string
+        self.imageUrl = json["image_url"].string
+        self.thumbnailUrl = json["thumbnail_url"].string
     }
 }
 
@@ -31,10 +33,6 @@ class PartnerTableViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        partnerList.append(Partner(name: "东莞电视台", imageUrl: "dgtv_icon.jpeg", desc: "东莞广播电视台成立于2005年3月28日，整合了东莞人民广播电台、东莞电视台、东莞阳光网三大媒体，是中共东莞市委宣传部领导下的正处级事业单位，是南方广播影视传媒集团的成员单位。现有员工500多人，设办公室、总编室、人力资源部、财务部、总工办、新闻中心、广播中心、文艺中心、阳光网站、技术中心、广告经营中心、网络经营部等16个机构。"))
-//        
-//        partnerList.append(Partner(name: "东莞城市学院", imageUrl: "city_u.jpeg", desc: "东莞理工学院城市学院是2004年6月经国家教育部批准成立的独立学院。2009年，由东莞理工学院和广东鸿发投资集团有限公司合作举办，并于2011年，按照“创办一流大学、办百年名校”的办学目标，择址东莞市寮步镇建设新校区。当年9月，5000名大一新生入驻。"))
         
         self.title = "合作伙伴"
         
@@ -99,8 +97,8 @@ class PartnerTableViewController: UITableViewController {
         
         let partner = self.partnerList[indexPath.row]
         
-        if let imageUrl = partner.imageUrl {
-            cell.imageView?.sd_setImageWithURL(NSURL(string: imageUrl), placeholderImage: UIImage(named: "placeholder.png"))
+        if let thumbnailUrl = partner.thumbnailUrl {
+            cell.imageView?.sd_setImageWithURL(NSURL(string: thumbnailUrl), placeholderImage: UIImage(named: "placeholder.png"))
         } else {
             cell.imageView?.image = UIImage(named: "placeholder.png")
         }
@@ -113,7 +111,7 @@ class PartnerTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("partnerDetail", sender: self)
+//        performSegueWithIdentifier("partnerDetail", sender: self)
     }
     
     /*

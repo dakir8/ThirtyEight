@@ -14,7 +14,9 @@
 		651A24AE1AE68A9E00D126C8 /* IConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651A24AD1AE68A9E00D126C8 /* IConstant.swift */; };
 		65268FD41AEE621100C5E620 /* UIBarButtonItemGrid.png in Resources */ = {isa = PBXBuildFile; fileRef = 65268FD21AEE621100C5E620 /* UIBarButtonItemGrid.png */; };
 		65268FD51AEE621100C5E620 /* UIBarButtonItemGrid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65268FD31AEE621100C5E620 /* UIBarButtonItemGrid@2x.png */; };
-		6575C5C01AED379500A5D33A /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 6575C5BF1AED379500A5D33A /* placeholder.png */; };
+		65268FD81AEFB49700C5E620 /* launch_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 65268FD61AEFB49700C5E620 /* launch_4.png */; };
+		65268FD91AEFB49700C5E620 /* launch_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 65268FD71AEFB49700C5E620 /* launch_5.png */; };
+		6575C5C01AED379500A5D33A /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6575C5BF1AED379500A5D33A /* placeholder@2x.png */; };
 		65EA24E31AED32F400D89CFD /* launch@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65EA24E11AED32F400D89CFD /* launch@3x.png */; };
 		65EA24E51AED334A00D89CFD /* launch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65EA24E41AED334A00D89CFD /* launch@2x.png */; };
 		65F70EF01AE7E337002B63EC /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F70EEF1AE7E337002B63EC /* app_icon@2x.png */; };
@@ -67,8 +69,10 @@
 		651A24AD1AE68A9E00D126C8 /* IConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IConstant.swift; sourceTree = "<group>"; };
 		65268FD21AEE621100C5E620 /* UIBarButtonItemGrid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIBarButtonItemGrid.png; sourceTree = "<group>"; };
 		65268FD31AEE621100C5E620 /* UIBarButtonItemGrid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIBarButtonItemGrid@2x.png"; sourceTree = "<group>"; };
+		65268FD61AEFB49700C5E620 /* launch_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch_4.png; sourceTree = "<group>"; };
+		65268FD71AEFB49700C5E620 /* launch_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch_5.png; sourceTree = "<group>"; };
 		654CB1801AE7D1B200666E22 /* My-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "My-Bridging-Header.h"; sourceTree = "<group>"; };
-		6575C5BF1AED379500A5D33A /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		6575C5BF1AED379500A5D33A /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
 		65EA24E11AED32F400D89CFD /* launch@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch@3x.png"; sourceTree = "<group>"; };
 		65EA24E41AED334A00D89CFD /* launch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch@2x.png"; sourceTree = "<group>"; };
 		65F70EEF1AE7E337002B63EC /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon@2x.png"; sourceTree = "<group>"; };
@@ -157,11 +161,13 @@
 		65FF3A841AE52B1E00CD95F5 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				65268FD61AEFB49700C5E620 /* launch_4.png */,
+				65268FD71AEFB49700C5E620 /* launch_5.png */,
 				65268FD21AEE621100C5E620 /* UIBarButtonItemGrid.png */,
 				65268FD31AEE621100C5E620 /* UIBarButtonItemGrid@2x.png */,
 				65EA24E41AED334A00D89CFD /* launch@2x.png */,
 				65EA24E11AED32F400D89CFD /* launch@3x.png */,
-				6575C5BF1AED379500A5D33A /* placeholder.png */,
+				6575C5BF1AED379500A5D33A /* placeholder@2x.png */,
 				CFEE90221AE270E4008CD5A2 /* dgtv_icon.jpeg */,
 				65F70EF31AE7E8AD002B63EC /* btn_video.png */,
 				65F70EF41AE7E8AD002B63EC /* btn_photo.png */,
@@ -345,6 +351,7 @@
 				65F70EF21AE7E33F002B63EC /* app_icon@3x.png in Resources */,
 				CFEE900A1AE26EFF008CD5A2 /* Images.xcassets in Resources */,
 				CFEE90231AE270E4008CD5A2 /* dgtv_icon.jpeg in Resources */,
+				65268FD81AEFB49700C5E620 /* launch_4.png in Resources */,
 				CF9E07C01AE3E3610001F5F8 /* guangming.jpg in Resources */,
 				65F70EF01AE7E337002B63EC /* app_icon@2x.png in Resources */,
 				CF9E07B31AE3D13C0001F5F8 /* tab_exibition.png in Resources */,
@@ -353,10 +360,11 @@
 				CF9E07BA1AE3DDF10001F5F8 /* qr_code.png in Resources */,
 				65EA24E51AED334A00D89CFD /* launch@2x.png in Resources */,
 				CF9E07761AE3B5230001F5F8 /* city_u.jpeg in Resources */,
-				6575C5C01AED379500A5D33A /* placeholder.png in Resources */,
+				6575C5C01AED379500A5D33A /* placeholder@2x.png in Resources */,
 				CF9E07B61AE3D1C80001F5F8 /* tab_company.png in Resources */,
 				CFEE90291AE29156008CD5A2 /* PartnerCell.xib in Resources */,
 				CF9E07BF1AE3E3610001F5F8 /* yuegang.jpg in Resources */,
+				65268FD91AEFB49700C5E620 /* launch_5.png in Resources */,
 				CF9E07B41AE3D13C0001F5F8 /* tab_partner.png in Resources */,
 				65F70EF61AE7E8AD002B63EC /* btn_photo.png in Resources */,
 			);

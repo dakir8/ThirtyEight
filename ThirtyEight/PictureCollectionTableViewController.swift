@@ -27,6 +27,7 @@ class PictureCollectionTableViewController: UITableViewController, MWPhotoBrowse
     }
     
     class Picture: Printable {
+        let thumbnailUrl: String?
         let pictureUrl: String?
         var description: String {
             return "pictureUrl:\(self.pictureUrl)"
@@ -34,6 +35,7 @@ class PictureCollectionTableViewController: UITableViewController, MWPhotoBrowse
         
         init(json: JSON) {
             pictureUrl = json["picture_url"].string
+            thumbnailUrl = json["thumbnail_url"].string
         }
     }
     

@@ -29,7 +29,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="394" id="VHl-0e-A7v"/>
                                                 </constraints>
-                                                <mutableString key="text">Hello，欢迎你关注我，我叫小度，是一个热爱生活、向往自由、喜欢阅读，喜欢思考，喜欢摄影的人，我们团队的微信公众账号叫“38摄氏度工作室”，我们团队的服务范围：   
+                                                <string key="text">Hello，欢迎你关注我，我叫小度，是一个热爱生活、向往自由、喜欢阅读，喜欢思考，喜欢摄影的人，我们团队的微信公众账号叫“38摄氏度工作室”，我们团队的服务范围：   
 1、企业宣传片  婚礼跟拍  广告产品拍摄 微电影  专题片  Mv制作  各类纪录片  影视广告
 2、户外广告（易拉宝、拉网展架、X展架、LED、户外指示牌、灯箱、T牌等）；印刷品（单张、海报、册子、手提袋等） 
 
@@ -42,7 +42,7 @@ QQ：896969882
 
 电话：15916969882
 
-微信二维码：</mutableString>
+微信二维码：</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" address="YES"/>
@@ -54,12 +54,17 @@ QQ：896969882
                                                     <constraint firstAttribute="width" constant="200" id="Bzj-Gf-9pp"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="company_icon.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="Sce-VX-A87">
-                                                <rect key="frame" x="150" y="8" width="300" height="200"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="company_icon.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="Sce-VX-A87">
+                                                <rect key="frame" x="0.0" y="8" width="600" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="7KQ-b9-1Xb"/>
                                                     <constraint firstAttribute="height" constant="200" id="vKs-Lt-o6I"/>
                                                 </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="7KQ-b9-1Xb"/>
+                                                    </mask>
+                                                </variation>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -73,6 +78,7 @@ QQ：896969882
                                             <constraint firstItem="1QU-Ha-RHH" firstAttribute="centerX" secondItem="d6M-oR-5Ho" secondAttribute="centerX" id="PHT-08-KDk"/>
                                             <constraint firstAttribute="centerX" secondItem="Sce-VX-A87" secondAttribute="centerX" id="RIN-aN-Wdf"/>
                                             <constraint firstAttribute="trailing" secondItem="1QU-Ha-RHH" secondAttribute="trailing" constant="295" id="aEm-Gw-B5a"/>
+                                            <constraint firstItem="Sce-VX-A87" firstAttribute="width" secondItem="CO9-9e-OVD" secondAttribute="width" id="gYj-9X-knm"/>
                                             <constraint firstItem="d6M-oR-5Ho" firstAttribute="top" secondItem="Sce-VX-A87" secondAttribute="bottom" constant="8" symbolic="YES" id="lfY-au-VHy"/>
                                             <constraint firstItem="1QU-Ha-RHH" firstAttribute="top" secondItem="d6M-oR-5Ho" secondAttribute="bottom" constant="20" id="tUa-I8-Pu2"/>
                                         </constraints>
