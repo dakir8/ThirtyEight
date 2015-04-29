@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 daniel. All rights reserved.
 //
 
+import Foundation
 import Alamofire
 import MWPhotoBrowser
 
@@ -30,12 +31,23 @@ class PictureCollectionTableViewController: UITableViewController, MWPhotoBrowse
         let thumbnailUrl: String?
         let pictureUrl: String?
         var description: String {
-            return "pictureUrl:\(self.pictureUrl)"
+            return "pictureUrl:\(self.pictureUrl), thumbnailUrl:\(self.thumbnailUrl)"
         }
         
         init(json: JSON) {
-            pictureUrl = json["picture_url"].string
-            thumbnailUrl = json["thumbnail_url"].string
+            var picUrl = json["picture_url"].string
+            if picUrl?.rangeOfString("http") == nil {
+                picUrl = IConstant.imageBaseUrl + picUrl!
+            }
+            
+            pictureUrl = picUrl
+            
+            var thumbUrl = json["thumbnail_url"].string
+            if thumbUrl?.rangeOfString("http") == nil {
+                thumbUrl = IConstant.thumbnailBaseUrl + thumbUrl!
+            }
+            
+            thumbnailUrl = thumbUrl
         }
     }
     
@@ -136,7 +148,7 @@ class PictureCollectionTableViewController: UITableViewController, MWPhotoBrowse
     func photoBrowser(photoBrowser: MWPhotoBrowser!, thumbPhotoAtIndex index: UInt) -> MWPhotoProtocol! {
         if Int(index) < self.pictureCollections[self.tableView.indexPathForSelectedRow()!.row].pictures.count {
             if let row = self.tableView.indexPathForSelectedRow()?.row {
-                return MWPhoto(URL: NSURL(string: self.pictureCollections[row].pictures[Int(index)].pictureUrl!))!
+                return MWPhoto(URL: NSURL(string: self.pictureCollections[row].pictures[Int(index)].thumbnailUrl!))!
             }
         }
         
